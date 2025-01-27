@@ -15,6 +15,6 @@
     "noUnusedLocals": true, // Helps catch unused variables
     "noUnusedParameters": true // Helps catch unused parameters
   },
-  "include": ["src/**/*.ts", "scripts/**/*.ts", "tests/**/*.ts"], // Specify files to include
+  "include": ["src/**/*.ts", "scripts/**/*.ts", "test/**/*.ts"], // Specify files to include
   "exclude": ["node_modules", "**/*.spec.ts"] // Specify files to exclude
 }
