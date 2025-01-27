@@ -1,6 +1,5 @@
 {
   "scripts": {
-    "install": "pnpm install",
     "build": "tsc",
     "test": "pnpm run test:contracts",
     "test:contracts": "mocha tests/test_contracts.js",
