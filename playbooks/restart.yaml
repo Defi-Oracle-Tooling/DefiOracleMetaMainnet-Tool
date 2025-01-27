@@ -1,0 +1,13 @@
+---
+- name: Restart services
+  hosts: all
+  tasks:
+    - name: Restart Besu service
+      service:
+        name: besu
+        state: restarted
+
+    - name: Restart FireFly service
+      service:
+        name: firefly
+        state: restarted

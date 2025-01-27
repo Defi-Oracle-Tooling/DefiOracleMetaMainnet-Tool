@@ -1,0 +1,16 @@
+---
+- name: Deploy FireFly
+  hosts: firefly_nodes
+  tasks:
+    - name: Pull FireFly Docker image
+      docker_image:
+        name: hyperledger/firefly
+        source: pull
+
+    - name: Run FireFly container
+      docker_container:
+        name: firefly
+        image: hyperledger/firefly
+        state: started
+        ports:
+          - "5000:5000"

@@ -1,0 +1,24 @@
+node:
+  name: "Node1"
+  ip: "192.168.1.1"
+  port: 8545
+  enode: "enode://abc123@192.168.1.1:30303"
+
+keys:
+  public: "keys/node1.pub"
+  private: "keys/node1.priv"
+
+roles:
+  - "validator"
+
+resources:
+  cpu: "4"
+  memory: "8GB"
+  disk: "500GB"
+
+monitoring:
+  prometheus_exporter: true
+
+logs:
+  file: "/var/log/node1.log"
+  level: "info"

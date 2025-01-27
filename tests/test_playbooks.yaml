@@ -1,0 +1,26 @@
+---
+- name: Test node management playbook
+  hosts: localhost
+  tasks:
+    - name: Check if node1.yaml exists
+      stat:
+        path: configs/nodes/node1.yaml
+      register: node1
+
+    - name: Assert node1.yaml exists
+      assert:
+        that:
+          - node1.stat.exists
+
+- name: Test besu deploy playbook
+  hosts: localhost
+  tasks:
+    - name: Check if besu binary exists
+      stat:
+        path: /usr/local/bin/besu
+      register: besu
+
+    - name: Assert besu binary exists
+      assert:
+        that:
+          - besu.stat.exists

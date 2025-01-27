@@ -1,0 +1,8 @@
+---
+- name: Update configuration files
+  hosts: all
+  tasks:
+    - name: Copy new configuration files
+      copy:
+        src: configs/{{ inventory_hostname }}.yaml
+        dest: /etc/hyperledger/config.yaml

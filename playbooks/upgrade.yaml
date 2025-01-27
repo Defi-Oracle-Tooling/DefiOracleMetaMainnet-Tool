@@ -1,0 +1,8 @@
+---
+- name: Upgrade all packages
+  hosts: all
+  tasks:
+    - name: Upgrade packages
+      apt:
+        upgrade: dist
+        update_cache: yes

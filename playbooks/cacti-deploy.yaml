@@ -1,0 +1,19 @@
+---
+- name: Deploy Cacti
+  hosts: cacti_nodes
+  tasks:
+    - name: Install Cacti
+      apt:
+        name: cacti
+        state: present
+
+    - name: Configure Cacti
+      template:
+        src: cacti-config.j2
+        dest: /etc/cacti/config.php
+
+    - name: Start Cacti service
+      service:
+        name: cacti
+        state: started
+        enabled: yes
