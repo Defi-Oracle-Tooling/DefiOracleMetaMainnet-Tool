@@ -18,6 +18,14 @@ resources:
 
 monitoring:
   prometheus_exporter: true
+  grafana: true
+
+security:
+  firewall:
+    enabled: true
+    allowed_ips:
+      - "192.168.1.2"
+      - "192.168.1.3"
 
 logs:
   file: "/var/log/node1.log"
