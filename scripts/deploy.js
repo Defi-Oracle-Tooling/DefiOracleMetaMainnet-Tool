@@ -3,6 +3,8 @@ async function main() {
 
   console.log("Deploying contracts with the account:", deployer.address);
 
+  console.log('Deploying contracts...');
+
   const Validator = await ethers.getContractFactory("Validator");
   const validator = await Validator.deploy();
   await validator.deployed();
@@ -32,6 +34,8 @@ async function main() {
   const token = await Token.deploy();
   await token.deployed();
   console.log("Token deployed to:", token.address);
+
+  console.log('Contracts deployed successfully.');
 }
 
 main()
