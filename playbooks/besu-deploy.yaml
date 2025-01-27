@@ -1,0 +1,18 @@
+---
+- name: Deploy Besu Nodes
+  hosts: besu_nodes
+  tasks:
+    - name: Copy Besu binary
+      copy:
+        src: /path/to/besu
+        dest: /usr/local/bin/besu
+        mode: '0755'
+    - name: Configure Besu
+      template:
+        src: besu-config.j2
+        dest: /etc/besu/config.toml
+    - name: Start Besu service
+      systemd:
+        name: besu
+        state: started
+        enabled: yes

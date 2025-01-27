@@ -1,0 +1,21 @@
+network:
+  name: "DeFi Oracle Meta Mainnet"
+  chain_id: 138
+  consensus: "ibft2"
+  nodes:
+    - name: "Node1"
+      ip: "192.168.1.1"
+      port: 8545
+      keys:
+        public: "key1.pub"
+        private: "key1.priv"
+    - name: "Node2"
+      ip: "192.168.1.2"
+      port: 8546
+      keys:
+        public: "key2.pub"
+        private: "key2.priv"
+firefly:
+  version: "latest"
+cacti:
+  version: "latest"

@@ -1,0 +1,12 @@
+---
+- hosts: all
+  tasks:
+    - name: Update configuration files
+      copy:
+        src: configs/{{ node_name }}.yaml
+        dest: /etc/hyperledger/
+
+    - name: Restart Besu Node
+      service:
+        name: besu
+        state: restarted

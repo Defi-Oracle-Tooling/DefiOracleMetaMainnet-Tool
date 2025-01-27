@@ -1,0 +1,20 @@
+name: Deploy Nodes
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Run Deployment Script
+        run: |
+          python tool.py update-config --path configs/config.yaml
+          python tool.py deploy --component besu --nodes all
+          python tool.py redeploy --component firefly
+          python tool.py restart --component cacti
