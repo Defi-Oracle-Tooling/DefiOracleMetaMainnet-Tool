@@ -30,6 +30,20 @@ To use `pnpm` as the package manager, ensure you have `pnpm` installed. You can 
 npm install -g pnpm
 ```
 
+## Install TypeScript
+
+To install TypeScript using `pnpm`, run the following command:
+```sh
+pnpm add typescript --save-dev
+```
+
+## Run TypeScript Compiler
+
+After installing TypeScript, run the TypeScript compiler to check for errors:
+```sh
+pnpm exec tsc --noEmit
+```
+
 ## Automation Scripts
 
 The following scripts are available in the `package.json` file to automate common tasks:
